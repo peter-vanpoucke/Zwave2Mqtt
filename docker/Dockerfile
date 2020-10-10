@@ -40,7 +40,7 @@ RUN rm -rf \
 # STEP 3:
 FROM node:erbium-alpine
 
-LABEL maintainer="robertsLando"
+LABEL maintainer="peter-vanpoucke"
 
 RUN apk add --no-cache \
     libstdc++  \
