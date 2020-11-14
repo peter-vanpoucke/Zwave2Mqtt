@@ -22,7 +22,7 @@ const FAN_DIMMER = {
   }
 }
 
-// Radio Thermostat / 2GIG CT32 and CT101
+// Radio Thermostat / 2GIG CT32, CT100 and CT101
 const THERMOSTAT_2GIG = {
   type: 'climate',
   object_id: 'thermostat',
@@ -87,8 +87,17 @@ const SPIRIT_ZWAVE_PLUS = {
   type: 'climate',
   object_id: 'thermostat',
   values: ['64-1-0', '49-1-1', '67-1-1', '67-1-11'],
-  mode_map: { off: 'Off', heat: 'Heat', cool: 'Heat Eco', drying: 'Full Power' },
-  setpoint_topic: { Heat: '67-1-1', 'Heat Eco': '67-1-11', 'Full Power': '67-1-1' },
+  mode_map: {
+    off: 'Off',
+    heat: 'Heat',
+    cool: 'Heat Eco',
+    drying: 'Full Power'
+  },
+  setpoint_topic: {
+    Heat: '67-1-1',
+    'Heat Eco': '67-1-11',
+    'Full Power': '67-1-1'
+  },
   default_setpoint: '67-1-1',
   discovery_payload: {
     min_temp: 8,
@@ -337,12 +346,14 @@ module.exports = {
   '99-12340-18756': [FAN_DIMMER], // GE 1724 Dimmer
   '99-12593-18756': [FAN_DIMMER], // GE 1724 Dimmer
   '152-12-25857': [THERMOSTAT_2GIG], // Radio Thermostat / 2GIG CT101
+  '152-263-25601': [THERMOSTAT_2GIG], // Radio Thermostat / 2GIG CT100
   '152-256-8194': [THERMOSTAT_2GIG], // Radio Thermostat / 2GIG CT32
   '271-4096-770': [COVER], // Fibaro FGS222
   '328-1-1': [STELLA_ZWAVE],
   '328-1-3': [SPIRIT_ZWAVE_PLUS],
   '328-2-3': [SPIRIT_ZWAVE_PLUS],
   '328-3-3': [SPIRIT_ZWAVE_PLUS],
-  '345-82-3': [COVER], // Qubin0 flush shutter
-  '622-23089-17235': [COVER] // Graber/Bali/Spring Fashion Covers
+  '345-82-3': [COVER], // Qubino flush shutter
+  '622-23089-17235': [COVER], // Graber/Bali/Spring Fashion Covers
+  '881-21-2': [SPIRIT_ZWAVE_PLUS] // Eurotronic Spirit / Aeotec ZWA021
 }
